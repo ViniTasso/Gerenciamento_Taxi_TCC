@@ -1,0 +1,25 @@
+================================================================================
+Sistema VGCT - Relatorio de Lucro de caixa                                      
+********************************************************************************
+Nome Func                         Nome Cliente                       Preço Taxi 
+--------------------------------------------------------------------------------
+Tiao                              Luciano                            12.0       
+Tiao                              Luciano                            null       
+Vanilda                           Fernando                           29.0       
+Vanilda                           Luciano                            null       
+Eduardo                           Luciano                            16.0       
+Eduardo                           Fernando                           null       
+Eduardo                           Luciano                            null       
+================================================================================
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                

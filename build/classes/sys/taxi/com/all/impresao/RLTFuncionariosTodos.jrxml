@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RLTFuncionariosTodos" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" isTitleNewPage="true" uuid="a6521cbd-19a2-4de9-a9eb-7b545b1cba6a">
+	<property name="ireport.scriptlethandling" value="2"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<queryString>
+		<![CDATA[SELECT
+     funcionario.`CODFUNC` AS funcionario_CODFUNC,
+     funcionario.`NOMEFUNC` AS Nome,
+     funcionario.`CPFFUNC` AS CPF,
+     funcionario.`CEPFUNC` AS CEP,
+     funcionario.`UFFUNC` AS UF,
+     funcionario.`CIDADEFUNC` AS Cidade,
+     funcionario.`BAIRROFUNC` AS Bairro,
+     funcionario.`ENDERECOFUNC` AS 'Endereço',
+     funcionario.`NUMEROCASAFUNC` AS 'Numero Casa',
+     funcionario.`COMPLEMENTOFUNC` AS Complemento,
+     funcionario.`TELEFONEFUNC` AS Telefone,
+     funcionario.`EMAILFUNC` AS Email,
+     funcionario.`DATANASFUNC` AS 'Data de Nascimento'
+FROM
+     `funcionario` funcionario]]>
+	</queryString>
+	<field name="funcionario_CODFUNC" class="java.lang.Integer"/>
+	<field name="Nome" class="java.lang.String"/>
+	<field name="CPF" class="java.lang.String"/>
+	<field name="CEP" class="java.lang.String"/>
+	<field name="UF" class="java.lang.String"/>
+	<field name="Cidade" class="java.lang.String"/>
+	<field name="Bairro" class="java.lang.String"/>
+	<field name="Endereço" class="java.lang.String"/>
+	<field name="Numero Casa" class="java.lang.String"/>
+	<field name="Complemento" class="java.lang.String"/>
+	<field name="Telefone" class="java.lang.String"/>
+	<field name="Email" class="java.lang.String"/>
+	<field name="Data de Nascimento" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="c73c1804-34d8-4dab-9000-3757308bf59e" key="staticText-1" x="0" y="0" width="535" height="50"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Andy" size="35"/>
+				</textElement>
+				<text><![CDATA[Relatorio de Funcionarios]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="100" splitType="Stretch">
+			<textField>
+				<reportElement uuid="3f054855-dffe-41cc-9531-446b27ed9c2e" x="32" y="10" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{Nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="33a5f378-970b-433e-a3ac-b537f519efde" x="147" y="10" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{CPF}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e6f5ccb7-0c19-4439-9ab5-9170c8a0c8ab" x="274" y="10" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{CEP}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="30" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="50" splitType="Stretch"/>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="50" splitType="Stretch"/>
+	</lastPageFooter>
+	<summary>
+		<band height="50" splitType="Stretch"/>
+	</summary>
+</jasperReport>

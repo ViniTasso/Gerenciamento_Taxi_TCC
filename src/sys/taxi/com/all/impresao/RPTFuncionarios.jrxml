@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0ff797fb-effa-4610-a37c-9e29a4ec3147">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="dataset1" uuid="349653cd-1e22-49b0-91e1-52c5c001d8f6">
+		<queryString>
+			<![CDATA[SELECT
+     funcionario.`NOMEFUNC` AS Nome,
+     funcionario.`CPFFUNC` AS CPF,
+     funcionario.`CNHFUNC` AS CNG,
+     funcionario.`CEPFUNC` AS CEP,
+     funcionario.`UFFUNC` AS UF,
+     funcionario.`TELEFONEFUNC` AS Telefone,
+     funcionario.`CELULARFUNC` AS Celular,
+     funcionario.`EMAILFUNC` AS Email,
+     funcionario.`DATAADMICAOFUNC` AS 'Data Admição',
+     funcionario.`CTPSFUNC` AS CTPS
+FROM
+     `funcionario` funcionario]]>
+		</queryString>
+		<field name="Nome" class="java.lang.String"/>
+		<field name="CPF" class="java.lang.String"/>
+		<field name="CNG" class="java.lang.String"/>
+		<field name="CEP" class="java.lang.String"/>
+		<field name="UF" class="java.lang.String"/>
+		<field name="Telefone" class="java.lang.String"/>
+		<field name="Celular" class="java.lang.String"/>
+		<field name="Email" class="java.lang.String"/>
+		<field name="Data Admição" class="java.sql.Date"/>
+		<field name="CTPS" class="java.lang.String"/>
+	</subDataset>
+	<queryString>
+		<![CDATA[SELECT
+     funcionario.`NOMEFUNC` AS Nome,
+     funcionario.`CPFFUNC` AS CPF,
+     funcionario.`CNHFUNC` AS CNG,
+     funcionario.`CEPFUNC` AS CEP,
+     funcionario.`UFFUNC` AS UF,
+     funcionario.`TELEFONEFUNC` AS Telefone,
+     funcionario.`CELULARFUNC` AS Celular,
+     funcionario.`EMAILFUNC` AS Email,
+     funcionario.`DATAADMICAOFUNC` AS 'Data Admição',
+     funcionario.`CTPSFUNC` AS CTPS
+FROM
+     `funcionario` funcionario]]>
+	</queryString>
+	<field name="Nome" class="java.lang.String"/>
+	<field name="CPF" class="java.lang.String"/>
+	<field name="CNG" class="java.lang.String"/>
+	<field name="CEP" class="java.lang.String"/>
+	<field name="UF" class="java.lang.String"/>
+	<field name="Telefone" class="java.lang.String"/>
+	<field name="Celular" class="java.lang.String"/>
+	<field name="Email" class="java.lang.String"/>
+	<field name="Data Admição" class="java.sql.Date"/>
+	<field name="CTPS" class="java.lang.String"/>
+	<background>
+		<band height="802" splitType="Stretch">
+			<image>
+				<reportElement uuid="be5a0955-1845-4164-ae94-cd8f1bc92c08" x="53" y="366" width="468" height="436"/>
+				<imageExpression><![CDATA["C:\\Java\\ProjetoTCC\\src\\sys\\taxi\\com\\all\\Images\\taxi_amarelo_da_nova_iorque_escultura_de_fotos-p153895501366078914b2do9_400.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="76" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="97" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="3953ec38-7496-4e04-9508-45b1be294065" x="0" y="0" width="555" height="76"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Blackadder ITC" size="40" isBold="false" isItalic="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Relatorio de Funcionarios]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="260" splitType="Stretch">
+			<componentElement>
+				<reportElement uuid="b179a206-837b-420c-a782-3d6aa52f6131" x="18" y="26" width="480" height="99"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="dataset1" uuid="ca801070-401a-4c07-be3b-f121491ebf00">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="99" width="480">
+						<staticText>
+							<reportElement uuid="e53f9a88-4f17-4776-b505-6084c0935404" x="19" y="14" width="100" height="20"/>
+							<textElement/>
+							<text><![CDATA[Nome]]></text>
+						</staticText>
+						<textField>
+							<reportElement uuid="30e2bfc9-ce5b-4706-9db8-d6154103599e" x="119" y="14" width="100" height="20"/>
+							<textElement/>
+							<textFieldExpression><![CDATA[$F{Nome}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement uuid="a1104794-176c-4f28-b769-c3f5492a3fbc" x="119" y="45" width="100" height="20"/>
+							<textElement/>
+							<textFieldExpression><![CDATA[$F{CPF}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement uuid="1ae7673e-97ab-4dba-8947-47f5a8b6aab0" x="343" y="14" width="100" height="20"/>
+							<textElement/>
+							<textFieldExpression><![CDATA[$F{CEP}]]></textFieldExpression>
+						</textField>
+						<staticText>
+							<reportElement uuid="a83cfc9f-3845-4f82-a527-784914577194" x="232" y="14" width="100" height="20"/>
+							<textElement/>
+							<text><![CDATA[CEP]]></text>
+						</staticText>
+						<staticText>
+							<reportElement uuid="ba6ae4eb-6ec0-42ec-98a6-a3a8269207ad" x="19" y="45" width="100" height="20"/>
+							<textElement/>
+							<text><![CDATA[CPF]]></text>
+						</staticText>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

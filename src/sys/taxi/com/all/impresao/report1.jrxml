@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9189a6a7-7751-4ad8-993a-4eb327bddd16">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="dataset1" uuid="eeb86d1f-6745-495f-a2f1-6af2d2b0f78d"/>
+	<queryString>
+		<![CDATA[SELECT
+     fornecedor.`NOMEFORN` AS fornecedor_NOMEFORN,
+     veiculo.`NOMEVEI` AS veiculo_NOMEVEI,
+     veiculo.`PLACAVEI` AS veiculo_PLACAVEI,
+     veiculo.`MARCAVEI` AS veiculo_MARCAVEI,
+     veiculo.`CODVEICULO` AS veiculo_CODVEICULO
+FROM
+     `fornecedor` fornecedor INNER JOIN `veiculo` veiculo ON fornecedor.`CODFORN` = veiculo.`CODFORN`]]>
+	</queryString>
+	<field name="fornecedor_NOMEFORN" class="java.lang.String"/>
+	<field name="veiculo_NOMEVEI" class="java.lang.String"/>
+	<field name="veiculo_PLACAVEI" class="java.lang.String"/>
+	<field name="veiculo_MARCAVEI" class="java.lang.String"/>
+	<field name="veiculo_CODVEICULO" class="java.lang.Integer"/>
+	<variable name="veiculo_CODVEICULO_1" class="java.lang.Integer" resetType="Column" calculation="First">
+		<variableExpression><![CDATA[$F{veiculo_CODVEICULO}]]></variableExpression>
+	</variable>
+	<group name="fornecedor_NOMEFORN">
+		<groupExpression><![CDATA[$F{fornecedor_NOMEFORN}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="244" splitType="Stretch">
+			<componentElement>
+				<reportElement uuid="82fe5a02-6a0e-4de7-bbfc-c8bd76ec300b" x="0" y="54" width="555" height="153"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="dataset1" uuid="88698c40-af02-462c-8b17-8af0b89c736a">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource(1)]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="153" width="555">
+						<textField>
+							<reportElement uuid="4402bf64-9f8f-46fc-ac65-d8f504d3c3b6" x="110" y="106" width="145" height="20"/>
+							<textElement/>
+							<textFieldExpression><![CDATA[$F{veiculo_NOMEVEI}]]></textFieldExpression>
+						</textField>
+						<staticText>
+							<reportElement uuid="92f74d9e-26a5-45bd-baf0-0908460550c2" x="5" y="106" width="88" height="20"/>
+							<textElement/>
+							<text><![CDATA[Nome Veiculo]]></text>
+						</staticText>
+						<textField>
+							<reportElement uuid="6ee844b4-83e7-4886-b60a-31c5ae013e7b" x="110" y="86" width="145" height="20"/>
+							<textElement/>
+							<textFieldExpression><![CDATA[$F{fornecedor_NOMEFORN}]]></textFieldExpression>
+						</textField>
+						<staticText>
+							<reportElement uuid="88a214e3-50c4-415d-9183-3b25e87cc825" x="5" y="86" width="88" height="20"/>
+							<textElement/>
+							<text><![CDATA[Nome Fornecedor]]></text>
+						</staticText>
+						<textField>
+							<reportElement uuid="bc109bf7-433d-47bf-b4f1-8b59fb95976c" x="439" y="86" width="100" height="20"/>
+							<textElement/>
+							<textFieldExpression><![CDATA[$F{veiculo_PLACAVEI}]]></textFieldExpression>
+						</textField>
+						<staticText>
+							<reportElement uuid="f7062869-6ca9-4f31-b1d7-bce3c8fd5545" x="303" y="86" width="100" height="20"/>
+							<textElement/>
+							<text><![CDATA[Placa]]></text>
+						</staticText>
+						<textField>
+							<reportElement uuid="25870343-dddf-461a-acef-b3c1afad952d" x="439" y="106" width="100" height="20"/>
+							<textElement/>
+							<textFieldExpression><![CDATA[$F{veiculo_MARCAVEI}]]></textFieldExpression>
+						</textField>
+						<staticText>
+							<reportElement uuid="ff226ddf-9cd6-413e-92ad-8188bdc4cba3" x="303" y="106" width="100" height="20"/>
+							<textElement/>
+							<text><![CDATA[Marca]]></text>
+						</staticText>
+						<staticText>
+							<reportElement uuid="9e3384ca-0c46-4388-afaa-9a08bb6461d7" x="0" y="0" width="275" height="61"/>
+							<textElement>
+								<font size="40"/>
+							</textElement>
+							<text><![CDATA[Veiculo :]]></text>
+						</staticText>
+						<textField evaluationTime="Column">
+							<reportElement uuid="a7b0f82e-74b1-4c7b-b6f5-08334930ce42" x="275" y="0" width="280" height="61"/>
+							<textElement>
+								<font size="40"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{veiculo_CODVEICULO_1}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

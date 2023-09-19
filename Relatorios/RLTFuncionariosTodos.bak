@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="RLTFuncionariosTodos"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="true"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="2" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<queryString><![CDATA[SELECT
+     funcionario.`CODFUNC` AS funcionario_CODFUNC,
+     funcionario.`NOMEFUNC` AS Nome,
+     funcionario.`CPFFUNC` AS CPF,
+     funcionario.`CEPFUNC` AS CEP,
+     funcionario.`UFFUNC` AS UF,
+     funcionario.`CIDADEFUNC` AS Cidade,
+     funcionario.`BAIRROFUNC` AS Bairro,
+     funcionario.`ENDERECOFUNC` AS Endereço,
+     funcionario.`NUMEROCASAFUNC` AS 'Numero Casa',
+     funcionario.`COMPLEMENTOFUNC` AS Complemento,
+     funcionario.`TELEFONEFUNC` AS Telefone,
+     funcionario.`EMAILFUNC` AS Email,
+     funcionario.`DATANASFUNC` AS 'Data de Nascimento'
+FROM
+     `funcionario` funcionario]]></queryString>
+
+	<field name="funcionario_CODFUNC" class="java.lang.Integer"/>
+	<field name="Nome" class="java.lang.String"/>
+	<field name="CPF" class="java.lang.String"/>
+	<field name="CEP" class="java.lang.String"/>
+	<field name="UF" class="java.lang.String"/>
+	<field name="Cidade" class="java.lang.String"/>
+	<field name="Bairro" class="java.lang.String"/>
+	<field name="EndereÃ§o" class="java.lang.String"/>
+	<field name="Numero Casa" class="java.lang.String"/>
+	<field name="Complemento" class="java.lang.String"/>
+	<field name="Telefone" class="java.lang.String"/>
+	<field name="Email" class="java.lang.String"/>
+	<field name="Data de Nascimento" class="java.sql.Date"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="50"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="0"
+						y="0"
+						width="535"
+						height="50"
+						key="staticText-1"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Andy" size="35"/>
+					</textElement>
+				<text><![CDATA[Relatorio de Funcionarios]]></text>
+				</staticText>
+			</band>
+		</title>
+		<pageHeader>
+			<band height="50"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="30"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="100"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="24"
+						y="10"
+						width="100"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{Nome}]]></textFieldExpression>
+				</textField>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="30"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="50"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<lastPageFooter>
+			<band height="50"  isSplitAllowed="true" >
+			</band>
+		</lastPageFooter>
+		<summary>
+			<band height="50"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>
